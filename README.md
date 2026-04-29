@@ -8,6 +8,8 @@ This repo is set up for GitHub Pages with a custom domain.
 
 Recommended DNS records at Namecheap:
 
+Remove any existing URL Redirect, parked-domain, or default A records for `@` and `www` first.
+
 | Type | Host | Value |
 | --- | --- | --- |
 | A | @ | 185.199.108.153 |
