@@ -1,143 +1,1717 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Copper Corridor Hotshot Delivery</title>
-    <meta
-      name="description"
-      content="Copper Corridor Hotshot Delivery provides expedited hotshot freight and direct delivery support across Arizona and the Southwest."
-    />
-    <meta name="theme-color" content="#1f3f46" />
-    <meta property="og:title" content="Copper Corridor Hotshot Delivery" />
-    <meta
-      property="og:description"
-      content="Expedited freight, direct delivery, and jobsite logistics across Arizona and the Southwest."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/hero-hotshot.png" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Copper Corridor Hotshot Delivery home">
-        <span class="brand-mark" aria-hidden="true">CC</span>
-        <span>
-          <strong>Copper Corridor</strong>
-          <small>Hotshot Delivery</small>
-        </span>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Copper Corridor Hotshot & Delivery — Safford · Morenci · Clifton</title>
+<meta name="description" content="Hot shot parts running and regional delivery across the Copper Corridor. Safford to Morenci, Clifton, Pima, Duncan, Willcox. Same-day, scheduled, posted rates." />
+<meta name="theme-color" content="#1a1612" />
+<meta property="og:title" content="Copper Corridor Hotshot & Delivery" />
+<meta property="og:description" content="Hot shot parts running and regional delivery across the Copper Corridor. Safford · Morenci · Clifton · Pima · Duncan · Willcox." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/hero-hotshot.png" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --copper: #b1551f;
+    --copper-deep: #8a3f15;
+    --copper-bright: #d4691e;
+    --charcoal: #1a1612;
+    --charcoal-2: #2a241e;
+    --bone: #f4ede0;
+    --bone-2: #e8dfcd;
+    --rust: #6b2814;
+    --hi-vis: #f5c518;
+    --line: rgba(244,237,224,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Work Sans', system-ui, sans-serif;
+    background: var(--charcoal);
+    color: var(--bone);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .display {
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 0.01em;
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Subtle texture overlay for grit */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 3px);
+    mix-blend-mode: overlay;
+  }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--charcoal);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+  }
+  .topbar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--bone);
+  }
+  .brand-glyph {
+    width: 36px;
+    height: 36px;
+    background: var(--copper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    color: var(--charcoal);
+    transform: skew(-8deg);
+    flex-shrink: 0;
+  }
+  .brand-text {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .brand-text small {
+    display: block;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--copper-bright);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .top-call {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--bone);
+    text-decoration: none;
+    padding: 10px 16px;
+    background: var(--copper);
+    color: var(--charcoal);
+    transition: background 0.2s;
+  }
+  .top-call:hover { background: var(--copper-bright); }
+  .top-call .pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--charcoal);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    padding: 60px 24px 80px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--charcoal);
+  }
+
+  /* Photo background — pickup on Arizona highway */
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+    filter: saturate(0.75) contrast(1.05);
+    pointer-events: none;
+  }
+
+  /* Color overlay — copper warmth + bottom darkening for legibility */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(26,22,18,0.35) 0%, rgba(26,22,18,0.82) 100%),
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(177,85,31,0.22), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 10% 80%, rgba(107,40,20,0.42), transparent 60%);
+  }
+
+  /* Topographic background lines — Arizona desert feel */
+  .hero-topo {
+    position: absolute;
+    inset: 0;
+    opacity: 0.10;
+    pointer-events: none;
+  }
+
+  .hero-grid-marks {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--copper-bright);
+    text-align: right;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    line-height: 1.6;
+  }
+
+  .hero-inner {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper-bright);
+    margin-bottom: 24px;
+    padding: 8px 14px;
+    border: 1px solid var(--copper);
+    background: rgba(177,85,31,0.08);
+  }
+  .hero-eyebrow::before {
+    content: "";
+    width: 8px; height: 8px;
+    background: var(--copper-bright);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(54px, 11vw, 168px);
+    line-height: 0.85;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero h1 .accent {
+    color: var(--copper-bright);
+    display: inline-block;
+  }
+  .hero h1 .stroke {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--bone);
+    display: inline-block;
+  }
+
+  .hero-sub {
+    font-size: clamp(17px, 1.6vw, 22px);
+    max-width: 620px;
+    margin-bottom: 40px;
+    color: var(--bone-2);
+    line-height: 1.5;
+  }
+  .hero-sub strong {
+    color: var(--bone);
+    background: var(--rust);
+    padding: 2px 6px;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 32px;
+    background: var(--copper);
+    color: var(--charcoal);
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 2px solid var(--copper);
+    transition: all 0.2s;
+    position: relative;
+  }
+  .btn-primary:hover {
+    background: var(--copper-bright);
+    border-color: var(--copper-bright);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--charcoal-2);
+  }
+  .btn-primary .arrow {
+    transition: transform 0.2s;
+  }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 28px;
+    background: transparent;
+    color: var(--bone);
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 2px solid var(--bone);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    background: var(--bone);
+    color: var(--charcoal);
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 24px;
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    max-width: 880px;
+  }
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hero-meta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper-bright);
+  }
+  .hero-meta-value {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--bone);
+  }
+
+  /* ============ SERVICES ============ */
+  .services {
+    background: var(--bone);
+    color: var(--charcoal);
+    padding: 100px 24px;
+    position: relative;
+  }
+
+  .section-head {
+    max-width: 1280px;
+    margin: 0 auto 72px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: end;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: var(--copper);
+    border-top: 3px solid var(--copper);
+    padding-top: 8px;
+  }
+  .section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(40px, 6vw, 88px);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .section-title em {
+    font-style: normal;
+    color: var(--copper);
+  }
+
+  .services-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0;
+    border: 2px solid var(--charcoal);
+  }
+  .services-grid-two {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+  .service {
+    padding: 36px 32px 40px;
+    border-right: 2px solid var(--charcoal);
+    border-bottom: 2px solid var(--charcoal);
+    background: var(--bone);
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+  }
+  .service:last-child { border-right: none; }
+  .service:hover { background: var(--bone-2); }
+
+  .service.featured {
+    background: var(--charcoal);
+    color: var(--bone);
+    position: relative;
+  }
+  .service.featured::before {
+    content: "MOST URGENT";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: var(--hi-vis);
+    color: var(--charcoal);
+    font-family: 'Anton', sans-serif;
+    font-size: 11px;
+    padding: 6px 10px;
+    letter-spacing: 0.15em;
+  }
+  .service.featured:hover { background: #0f0c0a; }
+
+  .service.service-coming {
+    background: var(--bone-2);
+    position: relative;
+  }
+  .service.service-coming::before {
+    content: "COMING SOON";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: var(--copper);
+    color: var(--bone);
+    font-family: 'Anton', sans-serif;
+    font-size: 11px;
+    padding: 6px 10px;
+    letter-spacing: 0.15em;
+  }
+  .service.service-coming:hover { background: #ebe1cd; }
+  .svc-coming-msg {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--charcoal-2);
+    font-style: italic;
+    padding-top: 8px;
+  }
+
+  .svc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--copper);
+    margin-bottom: 16px;
+  }
+  .service.featured .svc-num { color: var(--copper-bright); }
+
+  .svc-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  .svc-desc {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 24px;
+    color: var(--charcoal-2);
+    flex: 1;
+  }
+  .service.featured .svc-desc { color: var(--bone-2); }
+
+  .svc-rate {
+    border-top: 1px solid currentColor;
+    padding-top: 18px;
+    opacity: 0.95;
+  }
+  .svc-rate-header {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .svc-rate-line {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .svc-rate-line:last-child { margin-bottom: 0; }
+  .svc-rate-value {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color: var(--copper);
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+  .svc-rate-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+  .service.featured .svc-rate-value { color: var(--copper-bright); }
+
+  .batch-callout {
+    max-width: 1280px;
+    margin: 40px auto 0;
+    border: 2px solid var(--charcoal);
+    background: var(--charcoal);
+    color: var(--bone);
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .batch-mark {
+    font-family: 'Anton', sans-serif;
+    font-size: 64px;
+    color: var(--copper-bright);
+    line-height: 1;
+    width: 64px;
+    text-align: center;
+  }
+  .batch-head {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(20px, 2.4vw, 28px);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: var(--bone);
+  }
+  .batch-body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--bone-2);
+    max-width: 680px;
+  }
+
+  /* ============ COVERAGE MAP ============ */
+  .coverage {
+    background: var(--charcoal);
+    color: var(--bone);
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .coverage-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .coverage-text h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .coverage-text h2 em {
+    font-style: normal;
+    color: var(--copper-bright);
+  }
+  .coverage-text p {
+    font-size: 17px;
+    color: var(--bone-2);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .coverage-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .coverage-list li {
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: 19px;
+    letter-spacing: 0.04em;
+  }
+  .coverage-list li:nth-child(odd) {
+    border-right: 1px solid var(--line);
+    padding-right: 20px;
+  }
+  .coverage-list li:nth-child(even) { padding-left: 20px; }
+  .coverage-list .miles {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--copper-bright);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+
+  /* Map illustration */
+  .coverage-map {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(circle at 50% 50%, rgba(177,85,31,0.06), transparent 70%),
+      var(--charcoal-2);
+    padding: 20px;
+  }
+  .map-svg { width: 100%; height: 100%; }
+  .map-grid line { stroke: var(--line); stroke-width: 0.5; }
+  .map-route { stroke: var(--copper); stroke-width: 1.6; fill: none; stroke-dasharray: 4 3; stroke-linecap: round; stroke-linejoin: round; }
+  .map-route-main { stroke: var(--copper-bright); stroke-width: 2.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .map-node { fill: var(--copper); stroke: var(--bone); stroke-width: 1.5; }
+  .map-node-hub { fill: var(--copper-bright); stroke: var(--bone); stroke-width: 2; }
+  .map-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    fill: var(--bone);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .map-label-hub {
+    font-family: 'Anton', sans-serif;
+    font-size: 11px;
+    fill: var(--bone);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .map-corner {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    fill: var(--copper-bright);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .map-road-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    fill: var(--copper-bright);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    font-weight: 700;
+  }
+
+  /* ============ HOW IT WORKS ============ */
+  .process {
+    background: var(--bone);
+    color: var(--charcoal);
+    padding: 100px 24px;
+  }
+  .process-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0;
+    margin-top: 60px;
+  }
+  .step {
+    padding: 32px 24px;
+    border-right: 1px dashed var(--charcoal);
+    position: relative;
+  }
+  .step:last-child { border-right: none; }
+  .step-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 80px;
+    line-height: 0.85;
+    color: var(--copper);
+    margin-bottom: 16px;
+  }
+  .step-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+  .step-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--charcoal-2);
+  }
+
+  /* ============ ABOUT ============ */
+  .about {
+    background: var(--charcoal);
+    padding: 100px 24px;
+    position: relative;
+  }
+  .about-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .about-quote {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(30px, 4.4vw, 60px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 0.005em;
+  }
+  .about-quote em {
+    font-style: normal;
+    color: var(--copper-bright);
+  }
+  .about-attrib {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper-bright);
+    border-top: 1px solid var(--copper);
+    padding-top: 14px;
+    display: inline-block;
+  }
+  .about-credentials {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+  .cred-item .cred-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 56px;
+    color: var(--copper-bright);
+    line-height: 1;
+  }
+  .cred-item .cred-label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    color: var(--bone-2);
+    margin-top: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Founders grid */
+  .about-founders {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+  .founder-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--bone);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .founder-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper-bright);
+    margin-bottom: 18px;
+  }
+  .founder-bio {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--bone-2);
+  }
+
+  /* JoCo callout */
+  .joco-callout {
+    margin-top: 60px;
+    padding: 40px 44px;
+    background: rgba(177,85,31,0.10);
+    border-left: 4px solid var(--copper);
+  }
+  .joco-callout-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--copper-bright);
+    margin-bottom: 12px;
+  }
+  .joco-callout h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: var(--bone);
+    margin-bottom: 16px;
+  }
+  .joco-callout p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--bone-2);
+    margin: 0;
+    max-width: 720px;
+  }
+  .joco-callout p em {
+    color: var(--copper-bright);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ============ CTA BLOCK ============ */
+  .cta-block {
+    background: var(--copper);
+    color: var(--charcoal);
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-block::before, .cta-block::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 4px;
+    background: var(--charcoal);
+    transform: translateY(-50%);
+  }
+  .cta-block::before { left: 0; }
+  .cta-block::after { right: 0; }
+
+  .cta-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .cta-block h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(36px, 5.5vw, 72px);
+    line-height: 0.92;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .cta-block p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-phones {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cta-phone {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: var(--charcoal);
+    color: var(--bone);
+    text-decoration: none;
+    padding: 22px 36px;
+    font-family: 'Anton', sans-serif;
+    transition: all 0.2s;
+    min-width: 240px;
+  }
+  .cta-phone-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--copper-bright);
+  }
+  .cta-phone-num {
+    font-size: clamp(26px, 4vw, 38px);
+    letter-spacing: 0.04em;
+  }
+  .cta-phone:hover {
+    background: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--charcoal-2);
+  }
+
+  /* ============ VALUE / WHY HIRE US ============ */
+  .value {
+    background: var(--bone);
+    color: var(--charcoal);
+    padding: 100px 24px;
+    position: relative;
+  }
+  .value-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .value-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 60px;
+  }
+  .value-head h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-top: 16px;
+  }
+  .value-head h2 em {
+    font-style: normal;
+    color: var(--copper);
+    display: block;
+  }
+  .value-head p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--charcoal-2);
+    margin: 0;
+  }
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+  }
+  .cost-table thead th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper);
+    padding: 0 16px 14px 16px;
+    border-bottom: 1px solid var(--charcoal);
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .cost-table thead th:nth-child(2),
+  .cost-table thead th:nth-child(3) { text-align: center; }
+  .cost-table tbody td {
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .cost-table tbody td:nth-child(1) {
+    font-family: 'Anton', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .cost-table tbody td:nth-child(2),
+  .cost-table tbody td:nth-child(3) { text-align: center; }
+  .cost-table tbody td.check {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    color: var(--charcoal);
+    opacity: 0.55;
+  }
+  .cost-table tbody td.dash {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: var(--charcoal);
+    opacity: 0.3;
+  }
+  .cost-table tbody tr.copper-row {
+    background: rgba(177,85,31,0.08);
+  }
+  .cost-table tbody tr.copper-row td:first-child {
+    color: var(--copper);
+  }
+  .cost-table tbody tr.copper-row td.dash {
+    color: var(--copper);
+    opacity: 0.4;
+  }
+  .cost-table tbody td.true-cost {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: var(--copper);
+    text-transform: uppercase;
+  }
+  .value-footnote {
+    font-size: 12px;
+    color: var(--charcoal-2);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.04em;
+    margin-top: 24px;
+    line-height: 1.7;
+    opacity: 0.65;
+  }
+  .value-savings {
+    margin-top: 40px;
+    padding: 24px 28px;
+    border-left: 4px solid var(--copper);
+    background: rgba(0,0,0,0.04);
+  }
+  .value-savings p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .value-savings strong {
+    color: var(--copper);
+    font-weight: 700;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--charcoal);
+    color: var(--bone-2);
+    padding: 50px 24px 30px;
+    border-top: 1px solid var(--line);
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+    margin-bottom: 30px;
+  }
+  .footer-brand {
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--bone);
+  }
+  .footer-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper-bright);
+    margin-top: 4px;
+  }
+  .footer-parent {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--bone-2);
+    opacity: 0.65;
+    margin-top: 14px;
+    letter-spacing: 0.06em;
+  }
+  .footer-contact {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .footer-phones {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+  .footer-phones a strong {
+    color: var(--copper-bright);
+    margin-right: 8px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  .footer-contact a { color: var(--bone); text-decoration: none; }
+  .footer-contact a:hover { color: var(--copper-bright); }
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bone-2);
+    opacity: 0.6;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 880px) {
+    .coverage-inner { grid-template-columns: 1fr; gap: 50px; }
+    .section-head { grid-template-columns: 1fr; gap: 16px; }
+    .value-head { grid-template-columns: 1fr; gap: 24px; align-items: start; }
+    .value, .services { padding: 70px 20px; }
+    .cost-table { font-size: 13px; }
+    .cost-table thead th { font-size: 9px; padding: 0 8px 12px 8px; letter-spacing: 0.12em; }
+    .cost-table tbody td { padding: 16px 8px; }
+    .cost-table tbody td:nth-child(1) { font-size: 13px; }
+    .cost-table tbody td.check { font-size: 18px; }
+    .cost-table tbody td.true-cost { font-size: 14px; }
+    .footer-inner { grid-template-columns: 1fr; text-align: left; }
+    .footer-contact { text-align: left; }
+    .top-call { padding: 8px 12px; font-size: 13px; }
+    .top-call span:not(.pulse) { display: none; }
+    .top-call::after {
+      content: "CALL";
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 0.1em;
+    }
+    .hero { padding: 50px 20px 60px; min-height: auto; }
+    .hero-meta { margin-top: 50px; }
+    .hero-grid-marks { display: none; }
+    .step { border-right: none; border-bottom: 1px dashed var(--charcoal); padding: 24px 0; }
+    .step:last-child { border-bottom: none; }
+    .services { padding: 70px 20px; }
+    .coverage, .process, .about, .cta-block { padding: 70px 20px; }
+    .about-founders { grid-template-columns: 1fr; gap: 40px; }
+    .joco-callout { padding: 28px 24px; }
+    .coverage-list { grid-template-columns: 1fr; }
+    .coverage-list li:nth-child(odd) { border-right: none; padding-right: 0; }
+    .coverage-list li:nth-child(even) { padding-left: 0; }
+    .batch-callout { grid-template-columns: 1fr; gap: 12px; padding: 24px; text-align: left; }
+    .batch-mark { font-size: 48px; width: auto; text-align: left; }
+  }
+
+  .coverage-text p strong {
+    color: var(--copper-bright);
+    font-weight: 700;
+  }
+
+  /* Rate card table */
+  .rate-card {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    border: 1px solid var(--line);
+    background: rgba(0,0,0,0.15);
+  }
+  .rate-card thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper-bright);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--copper);
+    font-weight: 700;
+  }
+  .rate-card thead th:nth-child(2),
+  .rate-card thead th:nth-child(3),
+  .rate-card thead th:nth-child(4) { text-align: right; }
+  .rate-card tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: var(--bone);
+  }
+  .rate-card tbody td:nth-child(1) {
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 15px;
+  }
+  .rate-card tbody td:nth-child(2) {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--bone-2);
+    text-align: right;
+    width: 60px;
+  }
+  .rate-card tbody td:nth-child(3),
+  .rate-card tbody td:nth-child(4) {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    text-align: right;
+    width: 92px;
+  }
+  .rate-card tbody td:nth-child(3) { color: var(--bone); }
+  .rate-card tbody td:nth-child(4) { color: var(--copper-bright); }
+  .rate-card tbody tr:last-child td { border-bottom: none; }
+  .rate-card tbody tr.formula-row td {
+    border-top: 2px solid var(--copper);
+    background: rgba(177,85,31,0.08);
+    font-style: italic;
+  }
+  .rate-card tbody tr.formula-row td:nth-child(1) {
+    font-style: normal;
+    color: var(--copper-bright);
+  }
+  .rate-card tbody tr.formula-row td:nth-child(3),
+  .rate-card tbody tr.formula-row td:nth-child(4) {
+    font-size: 13px;
+    white-space: nowrap;
+    font-style: normal;
+  }
+
+  /* Stagger reveal */
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#" class="brand-mark" aria-label="Copper Corridor home">
+      <div class="brand-glyph">CC</div>
+      <div class="brand-text">
+        Copper Corridor
+        <small>HOTSHOT · DELIVERY</small>
+      </div>
+    </a>
+    <a class="top-call" href="tel:9283226084">
+      <span class="pulse"></span>
+      <span>(928) 322-6084</span>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-photo" src="assets/hero-hotshot.png" alt="Pickup truck hauling a flatbed trailer on an Arizona desert highway" />
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <svg class="hero-topo" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#b1551f" stroke-width="0.6">
+      <path d="M0,640 Q200,580 400,610 T800,580 T1200,600" />
+      <path d="M0,560 Q200,490 400,530 T800,500 T1200,520" />
+      <path d="M0,480 Q200,400 400,450 T800,420 T1200,440" />
+      <path d="M0,400 Q200,310 400,370 T800,340 T1200,360" />
+      <path d="M0,320 Q200,220 400,290 T800,260 T1200,280" />
+      <path d="M0,240 Q200,130 400,210 T800,180 T1200,200" />
+      <path d="M0,160 Q200,40 400,130 T800,100 T1200,120" />
+    </g>
+  </svg>
+
+  <div class="hero-grid-marks">
+    32°50'N · 109°42'W<br>
+    GRAHAM CO · ARIZONA<br>
+    DISPATCH 06:00 – 22:00
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Safford · Morenci · Clifton · Pima · Duncan · Willcox</div>
+    <h1>
+      We <span class="accent">run it</span><br>
+      so you <span class="stroke">don't</span><br>
+      have to.
+    </h1>
+    <p class="hero-sub">
+      <strong>Keep your crew at work. Your managers on-site.</strong> Hot shot parts running across the Copper Corridor. Same-day urgent, posted rates, no haggle.
+    </p>
+    <div class="hero-cta">
+      <a href="tel:9283226084" class="btn-primary">
+        Call Dispatch <span class="arrow">→</span>
       </a>
+      <a href="#services" class="btn-secondary">View Services</a>
+    </div>
 
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#services">Services</a>
-        <a href="#coverage">Coverage</a>
-        <a href="#quote">Quote</a>
-      </nav>
-    </header>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Booking</span>
+        <span class="hero-meta-value">Phone or text</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Service Hours</span>
+        <span class="hero-meta-value">6am – 10pm</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Coverage</span>
+        <span class="hero-meta-value">7 towns</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Pricing</span>
+        <span class="hero-meta-value">Posted rates</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <main id="top">
-      <section class="hero" aria-label="Copper Corridor Hotshot Delivery">
-        <img
-          class="hero-image"
-          src="assets/hero-hotshot.png"
-          alt="Pickup truck hauling a flatbed trailer on an Arizona desert highway"
-        />
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Arizona hotshot freight</p>
-          <h1>Copper Corridor Hotshot Delivery</h1>
-          <p class="hero-copy">
-            Direct, time-sensitive hauling for equipment, materials, and commercial freight
-            across Arizona and the Southwest.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:quotes@coppercorridorhotshotdelivery.delivery?subject=Hotshot%20delivery%20quote">
-              Request a quote
-            </a>
-            <a class="button secondary" href="#services">View services</a>
-          </div>
-        </div>
-      </section>
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-head">
+    <div class="section-num">01 / SERVICES</div>
+    <h2 class="section-title">More ways<br>to <em>get it there.</em></h2>
+  </div>
 
-      <section class="quick-strip" aria-label="Service highlights">
-        <div>
-          <strong>Expedited loads</strong>
-          <span>Responsive dispatch for time-sensitive freight.</span>
+  <div class="services-grid">
+    <div class="service featured">
+      <div class="svc-num">01 / URGENT</div>
+      <h3 class="svc-title">Hot Shot</h3>
+      <p class="svc-desc">
+        Drop-everything parts running. Counter to jobsite, fast. When the machine's down and crew time is bleeding, we move. Safford parts houses to Morenci/Clifton mines, ranches, job trailers — anywhere on the corridor.
+      </p>
+      <div class="svc-rate">
+        <span class="svc-rate-header">Rate</span>
+        <div class="svc-rate-line">
+          <span class="svc-rate-value">$50</span>
+          <span class="svc-rate-tag">Base</span>
         </div>
-        <div>
-          <strong>Jobsite ready</strong>
-          <span>Pickup, delivery, and supply runs for active projects.</span>
+        <div class="svc-rate-line">
+          <span class="svc-rate-value">+ $3</span>
+          <span class="svc-rate-tag">Per Mile</span>
         </div>
-        <div>
-          <strong>Regional coverage</strong>
-          <span>Arizona routes with Southwest delivery support.</span>
-        </div>
-      </section>
+      </div>
+    </div>
 
-      <section id="services" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">What we haul</p>
-          <h2>Hotshot delivery built for urgent commercial freight.</h2>
+    <div class="service">
+      <div class="svc-num">02 / STANDARD</div>
+      <h3 class="svc-title">Same-Day</h3>
+      <p class="svc-desc">
+        Need it today, just not the next 30 minutes. Pickup and delivery inside the day. Tools, supplies, prescriptions, special-order parts — anything that fits in a pickup bed.
+      </p>
+      <div class="svc-rate">
+        <span class="svc-rate-header">Rate</span>
+        <div class="svc-rate-line">
+          <span class="svc-rate-value">$25</span>
+          <span class="svc-rate-tag">Base</span>
         </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <h3>Equipment and materials</h3>
-            <p>
-              Dedicated hauling for tools, supplies, parts, and project-critical materials
-              that need a direct route.
-            </p>
-          </article>
-          <article class="service-card">
-            <h3>Construction support</h3>
-            <p>
-              Jobsite deliveries for contractors, suppliers, and operators who need dependable
-              movement without freight-terminal delays.
-            </p>
-          </article>
-          <article class="service-card">
-            <h3>Priority dispatch</h3>
-            <p>
-              Clear pickup details, practical routing, and delivery updates for urgent loads
-              with narrow timelines.
-            </p>
-          </article>
+        <div class="svc-rate-line">
+          <span class="svc-rate-value">+ $2</span>
+          <span class="svc-rate-tag">Per Mile</span>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section id="coverage" class="coverage">
-        <div>
-          <p class="eyebrow">Coverage</p>
-          <h2>Serving the Copper Corridor and regional Southwest routes.</h2>
+    <div class="service service-coming">
+      <div class="svc-num">03 / EQUIPMENT</div>
+      <h3 class="svc-title">Trailer Haul</h3>
+      <p class="svc-desc">
+        24-ft deck for skid steers, drill pipe, lumber loads, generators, pallets &mdash; anything that won't fit in a pickup bed. Light equipment moves between job sites and remote drilling locations.
+      </p>
+      <div class="svc-rate">
+        <span class="svc-rate-header">Status</span>
+        <div class="svc-coming-msg">
+          Quote on request &mdash; call dispatch to discuss your job.
         </div>
-        <p>
-          Based for Arizona work, Copper Corridor Hotshot Delivery supports mines,
-          construction sites, suppliers, farms, shops, and small businesses that need freight
-          moved directly from pickup to drop-off.
-        </p>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <section id="quote" class="section quote-section">
-        <div class="quote-copy">
-          <p class="eyebrow">Request dispatch</p>
-          <h2>Send the load details and timeline.</h2>
-          <p>
-            Include pickup and drop-off locations, freight dimensions, weight, ready time,
-            delivery deadline, and any loading requirements.
-          </p>
+<!-- VALUE / WHY HIRE US -->
+<section class="value" id="why-hire-us">
+  <div class="value-inner">
+    <div class="value-head">
+      <div>
+        <div class="section-num">02 / WHY HIRE US</div>
+        <h2>Keep your crew at work.<br><em>Your managers on-site.</em></h2>
+      </div>
+      <p>
+        Sending one of your own people on a parts run looks cheap. It isn't. Here's what's hidden in that "free" run &mdash; and what you're actually paying for, every time.
+      </p>
+    </div>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>What you're paying for</th>
+          <th>Sending your own</th>
+          <th>Copper Corridor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wages × hours off the job</td>
+          <td class="check">✓</td>
+          <td class="dash">&mdash;</td>
+        </tr>
+        <tr>
+          <td>Payroll burden &mdash; FICA, workers' comp, benefits</td>
+          <td class="check">✓</td>
+          <td class="dash">&mdash;</td>
+        </tr>
+        <tr>
+          <td>Fuel and vehicle wear</td>
+          <td class="check">✓</td>
+          <td class="dash">&mdash;</td>
+        </tr>
+        <tr>
+          <td>Crew sitting idle while their lead is out</td>
+          <td class="check">✓</td>
+          <td class="dash">&mdash;</td>
+        </tr>
+        <tr>
+          <td>Insurance exposure if your driver wrecks</td>
+          <td class="check">✓</td>
+          <td class="dash">&mdash;</td>
+        </tr>
+        <tr class="copper-row">
+          <td>What you actually pay us</td>
+          <td class="dash">&mdash;</td>
+          <td class="true-cost">Posted rate. Done.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="value-savings">
+      <p>
+        <strong>Run your own numbers.</strong> You know what your crew costs. You know what an hour of down-rig costs. Compare it to a posted rate on this page. We'll be here when you call.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage">
+  <div class="coverage-inner">
+    <div class="coverage-text">
+      <div class="section-num" style="margin-bottom: 24px; color: var(--copper-bright); border-color: var(--copper-bright);">03 / SERVICE ZONES</div>
+      <h2>Posted rates. <em>Plain math.</em></h2>
+      <p>
+        Base fee covers the call. Per-mile covers the road. <strong>$25 base + $2/mile same-day. $50 base + $3/mile hot shot.</strong> Distance is measured Safford to your zone — mine gate or town center. Same number every time. The math is on the card.
+      </p>
+      <table class="rate-card">
+        <thead>
+          <tr>
+            <th>Zone</th>
+            <th>Mi</th>
+            <th>Same-Day</th>
+            <th>Hot Shot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Safford / Thatcher / Pima</td>
+            <td>10</td>
+            <td>$45</td>
+            <td>$80</td>
+          </tr>
+          <tr>
+            <td>Safford Mine</td>
+            <td>14</td>
+            <td>$53</td>
+            <td>$92</td>
+          </tr>
+          <tr>
+            <td>Duncan</td>
+            <td>36</td>
+            <td>$97</td>
+            <td>$158</td>
+          </tr>
+          <tr>
+            <td>Willcox</td>
+            <td>48</td>
+            <td>$121</td>
+            <td>$194</td>
+          </tr>
+          <tr>
+            <td>Morenci / Morenci Mine</td>
+            <td>55</td>
+            <td>$135</td>
+            <td>$215</td>
+          </tr>
+          <tr>
+            <td>Clifton</td>
+            <td>58</td>
+            <td>$141</td>
+            <td>$224</td>
+          </tr>
+          <tr class="formula-row">
+            <td>Anywhere else</td>
+            <td>×</td>
+            <td>$25+$2/mi</td>
+            <td>$50+$3/mi</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="coverage-map">
+      <svg class="map-svg" viewBox="0 0 400 400" aria-hidden="true">
+        <!-- corner marks -->
+        <text x="14" y="22" class="map-corner">N ↑</text>
+        <text x="340" y="22" class="map-corner">SCALE 1:280K</text>
+        <text x="14" y="388" class="map-corner">CU CORRIDOR / AZ</text>
+        <text x="320" y="388" class="map-corner">REV. 2026</text>
+
+        <!-- Grid -->
+        <g class="map-grid">
+          <line x1="0" y1="80" x2="400" y2="80" />
+          <line x1="0" y1="160" x2="400" y2="160" />
+          <line x1="0" y1="240" x2="400" y2="240" />
+          <line x1="0" y1="320" x2="400" y2="320" />
+          <line x1="80" y1="0" x2="80" y2="400" />
+          <line x1="160" y1="0" x2="160" y2="400" />
+          <line x1="240" y1="0" x2="240" y2="400" />
+          <line x1="320" y1="0" x2="320" y2="400" />
+        </g>
+
+        <!-- Gila River (faint, runs east-west through valley) -->
+        <path d="M 30,232 Q 90,228 145,224 Q 195,220 250,212 Q 310,200 370,188" stroke="#6691a8" stroke-width="0.6" fill="none" opacity="0.35" stroke-dasharray="1.5 2" />
+
+        <!-- US-70 + US-191 NORTH (main route): Safford → east on 70/191 → north turn → Black Hills → Morenci → Clifton -->
+        <!-- Real geometry: goes east ~10 mi along Gila valley, then turns north at junction, climbs Black Hills -->
+        <path class="map-route-main" d="M 193,221 L 222,224 C 245,225 252,210 252,188 C 254,168 270,150 282,144 L 293,120" />
+
+        <!-- Reay Lane NW: Safford → Safford Mine -->
+        <path class="map-route" d="M 178,212 L 165,188 L 152,158" />
+
+        <!-- US-70 west: Safford → Thatcher → Pima -->
+        <path class="map-route" d="M 178,221 L 160,222 L 115,218" />
+
+        <!-- US-70 SE: from east junction → Duncan -->
+        <path class="map-route" d="M 222,224 L 250,238 L 290,268" />
+
+        <!-- US-191 south + I-10 west: Safford → south on 191 → west on I-10 → Willcox -->
+        <path class="map-route" d="M 185,228 L 184,278 L 170,308 L 95,335" />
+
+        <!-- Road number labels (kept sparse to avoid clutter) -->
+        <text x="248" y="195" class="map-road-label" transform="rotate(-82 248,195)">US 191</text>
+        <text x="143" y="213" class="map-road-label">US 70</text>
+        <text x="248" y="246" class="map-road-label" transform="rotate(28 248,246)">US 70</text>
+        <text x="125" y="322" class="map-road-label">I-10</text>
+
+        <!-- City nodes (drawn after routes so they layer on top) -->
+
+        <!-- Safford Mine (NW of Safford) -->
+        <circle class="map-node" cx="152" cy="158" r="5" />
+        <text x="93" y="155" class="map-label">Safford Mine</text>
+
+        <!-- Morenci -->
+        <circle class="map-node" cx="282" cy="144" r="6" />
+        <text x="295" y="142" class="map-label">Morenci</text>
+
+        <!-- Clifton -->
+        <circle class="map-node" cx="293" cy="120" r="6" />
+        <text x="306" y="118" class="map-label">Clifton</text>
+
+        <!-- Pima -->
+        <circle class="map-node" cx="115" cy="218" r="4" />
+        <text x="80" y="213" class="map-label">Pima</text>
+
+        <!-- Thatcher -->
+        <circle class="map-node" cx="160" cy="222" r="4" />
+        <text x="128" y="242" class="map-label">Thatcher</text>
+
+        <!-- Solomon -->
+        <circle class="map-node" cx="222" cy="224" r="4" />
+        <text x="232" y="245" class="map-label">Solomon</text>
+
+        <!-- Duncan -->
+        <circle class="map-node" cx="290" cy="268" r="4" />
+        <text x="302" y="272" class="map-label">Duncan</text>
+
+        <!-- Willcox -->
+        <circle class="map-node" cx="95" cy="335" r="5" />
+        <text x="38" y="345" class="map-label">Willcox</text>
+
+        <!-- Safford (hub) — drawn last so it sits on top, label clearly above -->
+        <circle class="map-node-hub" cx="185" cy="220" r="9" />
+        <text x="178" y="208" class="map-label-hub">Safford</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-inner">
+    <div class="section-head">
+      <div class="section-num">04 / HOW IT WORKS</div>
+      <h2 class="section-title">No app.<br>Just <em>call.</em></h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Call or Text</div>
+        <div class="step-desc">Tell us what you need, where it goes, and how fast. We quote on the phone, no back and forth.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Pay Up Front</div>
+        <div class="step-desc">Card, Venmo, or Cash App. Full receipt of items + posted delivery rate. No hidden surcharges.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">We Run It</div>
+        <div class="step-desc">Photo of the receipt at pickup. Live ETA. Hand-off at your gate, jobsite, porch — wherever.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Job Done</div>
+        <div class="step-desc">Photo confirmation on delivery. Save the number — half our work is repeat customers.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-inner">
+    <div class="section-num" style="margin-bottom: 32px; color: var(--copper-bright); border-color: var(--copper-bright);">05 / WHO RUNS IT</div>
+    <p class="about-quote">
+      Two owner-operators, one local fab shop. Drilling, mining, and contracting in this corridor runs on people who can't afford to leave the job &mdash; we built Copper Corridor to be the call you make when something blew at <em>10am</em> and you can't wait for tomorrow's truck.
+    </p>
+    <span class="about-attrib">— Levario &amp; Josephine · Owner-Operators</span>
+
+    <div class="about-founders">
+      <div class="founder">
+        <div class="founder-name">Levario</div>
+        <div class="founder-role">Driver · Dispatch · Operations</div>
+        <div class="founder-bio">
+          Six years operating heavy equipment at Freeport-McMoRan Morenci/Safford. Zero safety incidents. Top operator rankings. Knows what down-time costs a crew because he's been on the receiving end of the wait.
         </div>
-        <a class="quote-link" href="mailto:quotes@coppercorridorhotshotdelivery.delivery?subject=Hotshot%20delivery%20quote">
-          <span>quotes@coppercorridorhotshotdelivery.delivery</span>
-          <strong>Email for a quote</strong>
-        </a>
-      </section>
-    </main>
+      </div>
+      <div class="founder">
+        <div class="founder-name">Josephine</div>
+        <div class="founder-role">Driver · Dispatch · Certified Welder</div>
+        <div class="founder-bio">
+          12 years on the torch. Certified across 2G, 3G, and 4G positions, MIG/TIG/stick on mild steel, stainless, aluminum, and pipe. Runs fabrication, repair welding, custom covers, and upholstery at JoCo Manufacturing &mdash; the reason your custom mounting bracket, repair weld, or rig modification can come from the same vendor who delivered the part.
+        </div>
+      </div>
+    </div>
 
-    <footer class="site-footer">
-      <span>&copy; <span id="year"></span> Copper Corridor Hotshot Delivery</span>
-      <a href="#top">Back to top</a>
-    </footer>
+    <div class="about-credentials">
+      <div class="cred-item">
+        <div class="cred-num">6yr</div>
+        <div class="cred-label">Heavy equipment operations, Freeport-McMoRan</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">12yr</div>
+        <div class="cred-label">Certified welder on staff (2G/3G/4G). Fabrication, repair, custom covers, and upholstery through JoCo Manufacturing.</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">100%</div>
+        <div class="cred-label">Locally owned. JoCo Manufacturing LLC, Graham County, AZ.</div>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div class="joco-callout">
+      <div class="joco-callout-eyebrow">Beyond delivery</div>
+      <h3>Need fabrication, repair, custom covers, or upholstery?</h3>
+      <p>
+        Copper Corridor is a JoCo Manufacturing service. The same crew that runs your parts can fabricate, repair-weld, sew covers, and rebuild upholstery in the JoCo shop. One vendor relationship, two services. <a href="https://jocomanufacturing.com" target="_blank" rel="noopener"><em>Visit JoCo Manufacturing &rarr;</em></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <div class="cta-inner">
+    <h2>Got a job<br>that needs to move?</h2>
+    <p>Dispatch is open 6am to 10pm, seven days. Hot shot calls jump the line.</p>
+    <div class="cta-phones">
+      <a class="cta-phone" href="tel:9283226084">
+        <span class="cta-phone-name">Levario</span>
+        <span class="cta-phone-num">(928) 322-6084</span>
+      </a>
+      <a class="cta-phone" href="tel:9288755058">
+        <span class="cta-phone-name">Josephine</span>
+        <span class="cta-phone-num">(928) 875-5058</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Copper Corridor</div>
+      <div class="footer-tag">Hotshot · Delivery · Regional</div>
+      <div class="footer-parent">DBA of JoCo Manufacturing LLC</div>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-phones">
+        <a href="tel:9283226084"><strong>Levario</strong> (928) 322-6084</a>
+        <a href="tel:9288755058"><strong>Josephine</strong> (928) 875-5058</a>
+      </div>
+      Safford, Arizona<br>
+      6am – 10pm · 7 days
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 JoCo Manufacturing LLC, dba Copper Corridor Hotshot &amp; Delivery</span>
+    <span>coppercorridorhotshotdelivery.delivery</span>
+  </div>
+</footer>
+
+<script>
+  // Stagger-reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service, .step, .cred-item, .coverage-list li, .founder').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+</script>
+
+</body>
 </html>
