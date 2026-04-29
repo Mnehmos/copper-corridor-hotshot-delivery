@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Copper Corridor mark">
+  <rect width="64" height="64" rx="10" fill="#1f3f46"/>
+  <path d="M16 43 30 16h9L25 43h-9Z" fill="#d87838"/>
+  <path d="M29 43 43 16h5L34 43h-5Z" fill="#8aa89b"/>
+</svg>
